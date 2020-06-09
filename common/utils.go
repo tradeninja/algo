@@ -8,6 +8,16 @@ import (
 	"testing"
 )
 
+// SumInt returns the sum of all integers in a given slice.
+func SumInt(nums []int) int {
+	sum := 0
+	for _, v := range nums {
+		sum += v
+	}
+
+	return sum
+}
+
 // Swap two array values given their indices.
 func Swap(v interface{}, i, j int) {
 	switch a := v.(type) {
@@ -128,20 +138,12 @@ func AbsDiff(a, b int) int {
 
 // IsMoreThan1Apart checks if two integers are more than 1 apart.
 func IsMoreThan1Apart(a, b int) bool {
-	if AbsDiff(a, b) > 1 {
-		return true
-	}
-
-	return false
+	return AbsDiff(a, b) > 1
 }
 
 // IsLessThan1Apart checks if two integers are less or equal than 1 apart.
 func IsLessThan1Apart(a, b int) bool {
-	if AbsDiff(a, b) <= 1 {
-		return true
-	}
-
-	return false
+	return AbsDiff(a, b) <= 1
 }
 
 // Log prints out the map of logging context and value.
